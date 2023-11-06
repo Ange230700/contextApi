@@ -1,19 +1,19 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import UserContext from "../contexts/UserContext";
 
-function UserProfile({ isOnline, setIsOnline }) {
+function UserProfile() {
+  const { isOnline, setIsOnline } = useContext(UserContext);
   return (
     <>
       <div>
         User Profile is
         <span> {isOnline ? "Online" : "Offline"}</span>
       </div>
+      <button onClick={() => setIsOnline(!isOnline)}>
+        click to change user status
+      </button>
     </>
   );
 }
-
-UserProfile.propTypes = {
-  isOnline: PropTypes.bool.isRequired,
-  setIsOnline: PropTypes.func.isRequired,
-};
 
 export default UserProfile;
