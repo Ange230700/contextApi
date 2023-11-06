@@ -55,20 +55,20 @@ function App() {
       title: "Harry Potter and the Half-Blood Prince",
       release_year: 2009,
     },
-    {
-      movie_id: 11,
-      title: "Harry Potter and the Deathly Hallows: Part 1",
-      release_year: 2010,
-    },
-    {
-      movie_id: 12,
-      title: "Harry Potter and the Deathly Hallows: Part 2",
-      release_year: 2011,
-    },
+    // {
+    //   movie_id: 11,
+    //   title: "Harry Potter and the Deathly Hallows: Part 1",
+    //   release_year: 2010,
+    // },
+    // {
+    //   movie_id: 12,
+    //   title: "Harry Potter and the Deathly Hallows: Part 2",
+    //   release_year: 2011,
+    // },
   ]);
 
   return (
-    <MovieContext.Provider value={{ movies: movies }}>
+    <MovieContext.Provider value={{ movies: movies, setMovies: setMovies }}>
       <MoviesList />
     </MovieContext.Provider>
   );

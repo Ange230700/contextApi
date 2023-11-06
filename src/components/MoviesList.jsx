@@ -2,7 +2,7 @@ import { useContext } from "react";
 import MovieContext from "../contexts/MovieContext";
 
 function MoviesList() {
-  const { movies } = useContext(MovieContext);
+  const { movies, setMovies } = useContext(MovieContext);
 
   return (
     <div>
@@ -14,6 +14,24 @@ function MoviesList() {
           </li>
         ))}
       </ul>
+      {
+        movies.length < 11 && (
+            <button
+                onClick={() =>
+                setMovies([
+                    ...movies,
+                    {
+                    movie_id: movies.length + 1,
+                    title: `Harry Potter and the Deathly Hallows: Part 1`,
+                    release_year: 2010,
+                    },
+                ])
+                }
+            >
+                Add Movie
+            </button>
+        )
+      }
     </div>
   );
 }
