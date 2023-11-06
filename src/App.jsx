@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import MoviesList from "./components/MoviesList";
 import MovieContext from "./contexts/MovieContext";
